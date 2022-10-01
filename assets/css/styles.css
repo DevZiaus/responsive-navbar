@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #0095da;
+    --seconday: #05233e;
+    --hover: #e68324;
+    --text: #777;
+    --dark: #333;
+    --light: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    padding: 1rem 5rem;
+    min-height: 8vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    width: 4rem;
+    cursor: pointer;
+}
+
+.nav-brand img {
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav .nav-item .nav-link {
+    text-decoration: none;
+    padding: 1rem;
+    color: var(--primary);
+    transition: all linear .3s;
+    font-size: 14px;
+}
+
+.nav .nav-item .nav-link:hover {
+    color: var(--hover);
+}
+
+.nav-icon {
+    display: none;
+}
+
+.nav-icon div {
+    background-color: var(--primary);
+    height: 3px;
+    margin: 2px;
+    transition: all linear .3s;
+}
+
+.nav-icon .line-1,.line-3 {
+    width: 17px;
+}
+
+.nav-icon .line-2,.line-4 {
+    width: 25px;
+}
+
+.nav-icon:hover div {
+    background-color: var(--hover);
+}
+
+
+
+@media screen and (max-width: 900px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        padding: 2rem 3rem;
+        min-height: 8vh;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: var(--primary);
+        position: absolute;
+        right: 0;
+        height: 91vh;
+        width: 50%;
+        top: 9vh;
+        transform: translateX(100%);
+        transition: all linear .3s;
+    }
+
+    .nav .nav-item {
+        opacity: 0;
+    }
+
+    .nav .nav-item .nav-link {
+        color: var(--light);
+    }
+
+    .nav-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+}
+
+.nav-active {
+    transform: translateX(0);
+}
+
+@keyframes navItemAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line-1 {
+    opacity: 0;
+}
+
+.toggle .line-2 {
+    transform: rotate(-45deg) translate(5px, 6px);
+    position: absolute;
+    right: 50%;
+    top: 7.5vh;
+}
+
+.toggle .line-3 {
+    opacity: 0;
+}
+
+.toggle .line-4 {
+    transform: rotate(45deg) translate(5px, -6px);
+    position: absolute;
+    right: 50%;
+    top: 7.5vh;
+}
